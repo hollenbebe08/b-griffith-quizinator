@@ -1,0 +1,41 @@
+:root {
+    --primary-color: rgb(198, 195, 160);
+    --secondary-color: rgb(8, 102, 105);
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;  
+}
+
+
+/* header styling */
+
+header {
+    background-color: var(--secondary-color);
+}
+
+header h1 {
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    border: 5px solid var(--secondary-color);
+}
+
+footer {
+    background-color: var(--secondary-color);
+}
+
+footer h2 {
+    color: var(--primary-color);
+    display: flex;
+    justify-content: right;
+}
