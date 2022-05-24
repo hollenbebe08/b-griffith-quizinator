@@ -29,7 +29,7 @@ header h1 {
 
 /* hero styling */
 .hero {
-    padding: 30px;
+    padding: 20px;
 }
 
 /* Main section styling */
@@ -38,18 +38,35 @@ header h1 {
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
+    font-size: 20pt;
 }
 
 .question-text {
     display: flex;
     justify-content: center;
+    font-size: 18pt;
 }
 
 /* form styling */
-.display-one, .display-two, .display-three, .display-four {
+.btn-styling {
+    margin: auto;
+    padding-top: 40px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn-one, .btn-two, .btn-three, .btn-four {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16pt;
+    border: 5px solid var(--primary-color);
+    border-radius: 1cm;
+    margin-bottom: 16px;
 }
 
 /* footer styling */
