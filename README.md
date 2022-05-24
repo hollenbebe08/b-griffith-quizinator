@@ -3,10 +3,14 @@
 ## Purpose 
 The JavaScript Quizinator was created to test your JavaScript knowledge. It does so by testing how many answers you can get correct to the questions in a minute.
 
-## Instructions:
+## JavaScript Quizinator Instructions:
 
-Web Link:
+## Website:
 
-Software Used:
+## Built With
+* HTML
+* CSS
+* JavaScript
 
-Credit:
+## Contribution:
+Made by Betsy Griffith
