@@ -1,18 +1,12 @@
 var taskIdCounter = 0;
+var questionTextEl = document.querySelector("#question-text");
 var answerFormEl= document.querySelector("#answer-form");
-var questionNumber = document.querySelector("#question-number");
-var questionText = document.querySelector("#question-text");
 
-//questions array
-var questions = [
-    {
-        prompt: "Where is the correct place to insert a JavaScript?"
-    }
-];
+//Arrays
+var questions = []
+var answers = [A, B, C, D]
 
-//create array to save questions to localStorage
-questionHandler = function(event) {
- for(i = 0; i < questions.length; i++) {
-     var response = window.prompt(questions[i].prompt);
- }
+//questions function
+var questions = function () {
+
 };
