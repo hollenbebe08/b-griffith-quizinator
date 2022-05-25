@@ -8,25 +8,23 @@ var buttonAnswerFourEl = document.querySelector("#answer-four")
 var startQuiz = document.querySelector("#start");
 
 
-//Arrays
-var answersQuestionOne = [Number, String, Boolean, Array]; //the incorrect answer is array
+//Objects for Questions and Answers
 
-//questions function
+var questions = {
+    question1: {question:"question", answer: "answer"},
+    question2: {question: "question", answer: "answer"},
+    question3: {question: "question", answer: "answer"},
+    question4: {question: "question", answer: "answer"}
+};
 
+//to access a question use this code, ex question1: questions.question2.answer
+//for the above code the questions is referencing the object, and then question 2 is the nested object, and answer is referencing the answer inside of that object.
+
+//questions Handler
 var questionHandler = function (event) {
     event.preventDefault();
     
 };
-
-//answer function
-// var answerQuestionEl = document.createElement("answer button");
-// answerQuestionEl.textContent= "Answer 1";
-// answerQuestionEl.className="btn-one";
-// answerQuestionEl.setAttribute()//insert object here
-// actioncontainerEl.appendchild(answerQuestionEl);
-    
-// }
-
 
 
 //Event Listener to start the quiz
