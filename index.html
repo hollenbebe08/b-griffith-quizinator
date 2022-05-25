@@ -7,36 +7,37 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>JavaScript Quizinator</title>
 </head>
-<header>
-    <h1>Test your JavaScript Knowledge!</h1>
-</header>
 <body>
+    <header>
+        <h1>Test your JavaScript Knowledge!</h1>
+    </header>
     <main>
         <section class="hero"></section>
+        <div class="timer-btn">
+            <button id ="timer">Timer</button>
+        </div>
+        <div class="question-text" id="question-one">
+            <h2>What is not a JavaScript Primitive Data Type?</h2>
+        </div>
         <section>
-            <div class="timer-btn">
-                <button id ="timer">Timer</button>
-            </div>
-            <div class="question-text" id="question">
-                <h2>Question</h2>
-            </div>
             <div>
                 <form id="answer-form">
                     <div class="answer-btn-styling">
-                        <button type="button" class="btn-one">Answer A</button>
-                        <button type="button" class="btn-two">Answer B</button>
-                        <button type="button" class="btn-three">Answer C</button>
-                        <button type="button" class="btn-four">Answer D</button>
+                        <button type="button" class="btn-one" id="answer-one">Answer 1</button>
+                        <button type="button" class="btn-two" id="answer-two">Answer 2</button>
+                        <button type="button" class="btn-three" id="answer-three">Answer 3</button>
+                        <button type="button" class="btn-four" id="answer-four">Answer 4</button>
                     </div>
                 </form>
             </div>
-            <div >
+        </section>
+            <div>
                 <button id="start">Start the Quiz!</button>
             </div>
-        </section>
     </main>
+    <footer>
+        <h3>Created by Betsy Griffith</h3>
+    </footer>
+    <script src="./assets/js/quizinator.js"></script>
 </body>
-<footer>
-    <h3>Created by Betsy Griffith</h3>
-</footer>
 </html>
