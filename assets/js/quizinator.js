@@ -1,11 +1,6 @@
-// var questionTextEl = document.querySelector("#questions");
-// var answerFormEl= document.querySelector("#answer-form");
-// var buttonAnswerOneEl = document.querySelector("#answer-one");
-// var buttonAnswerTwoEl = document.querySelector("#answer-two")
-// var buttonAnswerThreeEl = document.querySelector("#answer-three")
-// var buttonAnswerFourEl = document.querySelector("#answer-four")
 var startQuizEl = document.querySelector("#start");
 // var timerEl = document.querySelector("timer");
+var questionsToAskEl= document.querySelector("#questions-to-ask");
 
 
 //Objects for Questions and Answers
@@ -32,10 +27,12 @@ var startQuizEl = document.querySelector("#start");
 // };
 
 //questions Handler
-// var questionHandler = function (event) {
-//     event.preventDefault();
-    
-// };
+var questionHandler = function() {
+    var questionEl = document.createElement("li");
+    questionItemEl.className = "question-text";
+    questionItemEl.textContent = "This is the first question.";
+    questionsToAskEl.appendChild(questionEl);
+  };
 
 
 //Event Listener to start the quiz
