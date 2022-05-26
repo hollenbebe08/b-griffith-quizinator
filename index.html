@@ -10,35 +10,35 @@
 <body>
     <header>
         <h1>Click the start button to begin the quiz!</h1>
+        <section>
+            <button type="button" id="start">Start the Quiz!</button>
+        </section>
     </header>
-    <section class="hero"></section>
+    <section class="hero">
+    </section>
     <section class="timer-btn">
         <button id ="timer">Timer</button>
     </section>
-    <section>
-        <div class="test-your-knowledge">
-            <h2>Test your JavaScript Knowledge!</h2>
-        </div>
-    <section>
-            <ul class="question-text" id="questions-to-ask">
-                <li id="questions"></li>
-            </ul>
-    </section>
-        <section>
-            <div>
-                <form id="answer-form">
-                    <div class="answer-btn-styling">
-                        <button type="button" class="btn-one" id="answer-one">Answer 1</button>
-                        <button type="button" class="btn-two" id="answer-two">Answer 2</button>
-                        <button type="button" class="btn-three" id="answer-three">Answer 3</button>
-                        <button type="button" class="btn-four" id="answer-four">Answer 4</button>
-                    </div>
-                </form>
-            </div>
+    <main class="page-content">
+        <section class="question-answer-wrapper">
+            <h2 class="question-title">Test your JavaScript Knowledge!</h2>
+                <ul class="questions-list" id="questions-to-ask">
+                    <li class="question-text"></li>
+                </ul>
+            <section>
+                <div>
+                    <form id="answer-form">
+                        <div class="answer-btn-styling">
+                            <button type="button" class="btn-one" id="answer-one">Answer 1</button>
+                            <button type="button" class="btn-two" id="answer-two">Answer 2</button>
+                            <button type="button" class="btn-three" id="answer-three">Answer 3</button>
+                            <button type="button" class="btn-four" id="answer-four">Answer 4</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </section>
-    <section class="start-btn">
-        <button id="start">Start the Quiz!</button>
-    </section>
+    </main>
     <footer>
         <h3>Created by Betsy Griffith</h3>
     </footer>

@@ -1,6 +1,6 @@
-var startQuizEl = document.querySelector("#start");
-// var timerEl = document.querySelector("timer");
+var startBtnEl = document.querySelector("#start");
 var questionsToAskEl= document.querySelector("#questions-to-ask");
+// var timerEl = document.querySelector("timer");
 
 
 //Objects for Questions and Answers
@@ -14,6 +14,14 @@ var questionsToAskEl= document.querySelector("#questions-to-ask");
 //to access a question use this code, ex question1: questions.question2.answer
 //for the above code the questions is referencing the object, and then question 2 is the nested object, and answer is referencing the answer inside of that object.
 
+//questions Handler
+var questionHandler = function() {
+    var questionItemEl = document.createElement("li");
+    questionItemEl.className = "question-text";
+    questionItemEl.textContent = "This is the first question.";
+    questionsToAskEl.appendChild(questionItemEl);
+  };
+
 //Timer function
 // var timer = function() {
 //     //when the questionHandler beings so does the timer countdown
@@ -26,16 +34,5 @@ var questionsToAskEl= document.querySelector("#questions-to-ask");
 //     timerEl.innerHTML = minutes + " : " + seconds
 // };
 
-//questions Handler
-var questionHandler = function() {
-    var questionEl = document.createElement("li");
-    questionItemEl.className = "question-text";
-    questionItemEl.textContent = "This is the first question.";
-    questionsToAskEl.appendChild(questionEl);
-  };
-
-
 //Event Listener to start the quiz
-// startQuizEl.addEventLister("click", function(){
-//     alert("button clicked!");
-// });
+startBtnEl.addEventListener("click", questionHandler);

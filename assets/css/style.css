@@ -28,10 +28,21 @@ header h1 {
     justify-content: center;
 }
 
+#start {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #27BB36;
+    font-size: 20pt;
+    border: 5px solid black;
+}
+
 /* hero styling */
 .hero {
     padding: 20px;
 }
+
 
 /* timer counter styling*/
 .timer-btn {
@@ -45,22 +56,23 @@ header h1 {
     font-size: 20pt;
 }
 /* Main section styling */
-.test-your-knowledge {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 30px;
+
+.question-title {
+    margin: auto;
     padding-top: 20px;
-    font-size: 20pt;
+    padding-bottom: 20px;
+    display:flex;
+    justify-content: center;
+    font-size: 30pt;
 }
 
-.question-text li {
+.question-text {
     margin: auto;
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
-    font-size: 22pt;
-    list-style: none;
+    font-size: 28pt;
 }
 
 /* form styling */
@@ -82,21 +94,6 @@ header h1 {
     border: 5px solid var(--primary-color);
     border-radius: 1cm;
     margin-bottom: 16px;
-}
-
-/* start button styling */
-.start-btn {
-    padding-top: 50px;
-}
-
-#start {
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    background-color: #27BB36;
-    font-size: 20pt;
-    border: 5px solid black;
 }
 
 /* footer styling */
