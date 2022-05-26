@@ -86,7 +86,7 @@ header h1 {
     justify-content: space-evenly;
 }
 
-.btn-one, .btn-two, .btn-three, .btn-four {
+.answer-btn {
     padding: 20px;
     background-color: var(--tertiary-color);
     font-weight: bold;
