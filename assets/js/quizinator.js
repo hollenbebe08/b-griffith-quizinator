@@ -1,31 +1,30 @@
 var startBtnEl = document.querySelector("#start");
 var questionsToAskEl= document.querySelector("#questions-to-ask");
 var formAnswerEl= document.querySelector("#answer-form");
-var answerToQuestionsEl= document.querySelector("#answer-one");
+var answerToQuestionOneEl= document.querySelector("#answer-one");
+var answerToQuestionTwoEl= document.querySelector("#answer-two");
+var answerToQuestionThreeEl= document.querySelector("#answer-three");
+var answerToQuestionFourEl= document.querySelector("#answer-four");
 var currentQuestionIndex = 0;
-var currentAnswerIndex = 0;
 // currentQuestionIndex++; //use this when you want to go onto the next question to make the question one index bigger
 
 // var timerEl = document.querySelector("timer");
 
 
-//Objects for Questions and Answers
+//Arrays for questions and answers
 var questions = ["What is not a JavaScript Primitive Data Type?",
  "A JavaScript file has an extension of", 
  "Which of the following type of variables is visible everywhere in your JavaScript code?", 
  "which built-in method returns the calling string value converted to lower case?"
 ];
 
-answers = [
-["Array", "String", "Boolean", "Number"], 
-["html", "js", "jpg", "jsq"], 
-["local variable", "script variable", "function variable", "global variable"],
-["tolowercase", "tolowercase()", "toLowercase()", "toLowerCase()"]
-];
+// answers = [
+questionOneAnswerArray= ["Array", "String", "Boolean", "Number"];
+// ["html", "js", "jpg", "jsq"], 
+// ["local variable", "script variable", "function variable", "global variable"],
+// ["tolowercase", "tolowercase()", "toLowercase()", "toLowerCase()"]
+// ];
 
-
-//to access a question use this code, ex question1: questions.question2.answer
-//for the above code the questions is referencing the object, and then question 2 is the nested object, and answer is referencing the answer inside of that object.
 
 //questions Handler
 var questionHandler = function() {
@@ -57,31 +56,32 @@ var questionHandler = function() {
 
   //answers appear when the questionHandler starts up and correspond with each question
   var answerHandler = function() {
-      //prevent the answers from disappearing
+        //when the start button is clicked, display both the question and the answers
+
+      //add the html for answer Button One
       event.preventDefault();
-      //create list items for the answers to be entered into
-      var answerItemEl= document.createElement("li");
-      //add the html to each answer button
-      answerItemEl.innerHTML = "<li class='answer-one'>" + answers[0];
-      answerToQuestionsEl.appendChild(answerItemEl);
+      var answerBtnOneEl= document.createElement("li");
+      answerBtnOneEl.innerHTML = questionOneAnswerArray[0];
+      answerToQuestionOneEl.appendChild(answerBtnOneEl);
 
-      //use a switch answer1, answer2, answer3, answer4 to execute what happens with each answer
-//       switch(answers) {
-//         case 1: answerItemEl.querySelector("click" = "Array"),
-//             alert("That's correct!");
-//             break;
-//         case 2: answerItemEl.querySelector("click" = "js"),
-//             alert("That's correct!");
-//             break;
-//         case 3: answerItemEl.querySelector("click" = "global variable"),
-//             alert("That's correct!");
-//             break;
-//         case 4: answerItemEl.querySelector("click" = "toLowerCase()"),
-//             alert("That's correct!");
-//             break;
-//       };
-  };
+      //add the html for answer Button Two
+      event.preventDefault();
+      var answerBtnTwoEl= document.createElement("li");
+      answerBtnTwoEl.innerHTML = questionOneAnswerArray[1];
+      answerToQuestionTwoEl.appendChild(answerBtnTwoEl);
 
+      //add the html for answer Button Three
+      event.preventDefault();
+      var answerBtnThreeEl= document.createElement("li");
+      answerBtnThreeEl.innerHTML = questionOneAnswerArray[2];
+      answerToQuestionThreeEl.appendChild(answerBtnThreeEl);
+
+        //add the html for answer Button Four
+        event.preventDefault();
+        var answerBtnFourEl= document.createElement("li");
+        answerBtnFourEl.innerHTML = questionOneAnswerArray[2];
+        answerToQuestionFourEl.appendChild(answerBtnFourEl);
+    };
 
 //Event Listener to start the quiz
 startBtnEl.addEventListener("click", questionHandler);
