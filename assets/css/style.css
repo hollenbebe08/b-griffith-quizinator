@@ -76,7 +76,7 @@ header h1 {
 }
 
 /* form styling */
-.answer-btn-styling {
+.answer-text-styling {
     margin: auto;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -86,7 +86,11 @@ header h1 {
     justify-content: space-evenly;
 }
 
-.answer-btn {
+.answer-text-styling li {
+    list-style: none;
+}
+
+.answer-text {
     padding: 20px;
     background-color: var(--tertiary-color);
     font-weight: bold;
