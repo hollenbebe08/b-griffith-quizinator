@@ -1,4 +1,5 @@
 var startBtnEl = document.querySelector("#start");
+var timerBtnEl = document.querySelector("#timer");
 var questionsToAskEl= document.querySelector("#questions-to-ask");
 var formAnswerEl= document.querySelector("#answer-form");
 var answerToQuestionOneEl= document.querySelector("#answer-one");
@@ -6,6 +7,8 @@ var answerToQuestionTwoEl= document.querySelector("#answer-two");
 var answerToQuestionThreeEl= document.querySelector("#answer-three");
 var answerToQuestionFourEl= document.querySelector("#answer-four");
 var currentQuestionIndex = 0;
+var time = 40;
+
 // currentQuestionIndex++; //use this when you want to go onto the next question to make the question one index bigger
 
 // var timerEl = document.querySelector("timer");
@@ -15,14 +18,12 @@ var currentQuestionIndex = 0;
 var questions = ["What is not a JavaScript Primitive Data Type?",
  "A JavaScript file has an extension of", 
  "Which of the following type of variables is visible everywhere in your JavaScript code?", 
- "which built-in method returns the calling string value converted to lower case?"
 ];
 
 // answers = [
 questionOneAnswerArray= ["Array", "String", "Boolean", "Number"];
 // ["html", "js", "jpg", "jsq"], 
 // ["local variable", "script variable", "function variable", "global variable"],
-// ["tolowercase", "tolowercase()", "toLowercase()", "toLowerCase()"]
 // ];
 
 
@@ -40,7 +41,7 @@ var questionHandler = function() {
         answerHandler()
     };
 
-
+    timerHandler();
     //need the answers to appear with the question
     
 
@@ -83,6 +84,21 @@ var questionHandler = function() {
         answerToQuestionFourEl.appendChild(answerBtnFourEl);
     };
 
+    var timerHandler = function() {
+        if (time > 0) {
+            time -= 1;
+            console.log(time);
+            document.querySelector("#timer").innerHTML = time;
+        } else if (time < 0) {
+            clearInterval(intervalId);
+            event.preventDefault();
+        } else {
+            alert("You've ran out of time!")
+        }
+
+        var intervalId = setInterval(timerHandler, 1000);
+    };
+
+
 //Event Listener to start the quiz
 startBtnEl.addEventListener("click", questionHandler);
-// formAnswerEl.addEventListener("click", answerHandler);
