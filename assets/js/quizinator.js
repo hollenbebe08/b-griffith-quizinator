@@ -7,7 +7,7 @@ var answerToQuestionTwoEl= document.querySelector("#answer-two");
 var answerToQuestionThreeEl= document.querySelector("#answer-three");
 var answerToQuestionFourEl= document.querySelector("#answer-four");
 var currentQuestionIndex = 0;
-var time = 40;
+var timer = 40;
 
 // currentQuestionIndex++; //use this when you want to go onto the next question to make the question one index bigger
 
@@ -85,18 +85,17 @@ var questionHandler = function() {
     };
 
     var timerHandler = function() {
-        if (time > 0) {
-            time -= 1;
-            console.log(time);
-            document.querySelector("#timer").innerHTML = time;
-        } else if (time < 0) {
-            clearInterval(intervalId);
-            event.preventDefault();
+        if (timer > 0) {
+            timer -= 1;
+            console.log(timer);
+            document.querySelector("#timer").innerHTML = timer;
+        } else if (--timer < 0) {
+            clearInterval(startCountDown);
         } else {
             alert("You've ran out of time!")
         }
 
-        var intervalId = setInterval(timerHandler, 1000);
+        var startCountDown = setInterval(timerHandler, 1000);
     };
 
 
