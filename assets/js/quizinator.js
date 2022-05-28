@@ -3,6 +3,7 @@ var startBtnEl = document.querySelector("#start");
 var timerBtnEl = document.querySelector("#timer");
 var answerBtnsEl = document.querySelector(".answer-text");
 var timer = 40;
+var score = 0;
 
 //DOM Elements Q and A
 var questionEl = document.querySelector("#questions-to-ask");
@@ -49,9 +50,24 @@ function setQandA(){
     // timerHandler();
 };
 
-function checkAnswer(){
-    var answerObj = questionAnswersObj[currentIndex];
-    console.log(answerObj.correctAnswer);
+function checkAnswer(selectedAnswer){
+    var correctAnswer = questionAnswersObj[currentIndex].correctAnswer;
+
+    //check answer and increment score
+    if(selectedAnswer === correctAnswer){
+        alert("That's correct!");
+        score += 10;
+    } else {
+        alert("That's wrong!")
+    };
+
+    //Increment question or finish
+    if(currentIndex === questionAnswersObj.length-1){
+        alert("Your score is " + score);
+    } else {
+        currentIndex++;
+        setQandA();
+    };
 };
 
 // var timerHandler = function() {
@@ -68,7 +84,15 @@ function checkAnswer(){
 
 //Event Listeners
 startBtnEl.addEventListener("click", setQandA);
-answerOneButtonEl.addEventListener("click", checkAnswer(answerOneButtonEl.textContent));
-answerTwoButtonEl.addEventListener("click", checkAnswer(answerTwoButtonEl.textContent));
-answerThreeButtonEl.addEventListener("click", checkAnswer(answerThreeButtonEl.textContent));
-answerFourButtonEl.addEventListener("click", checkAnswer(answerFourButtonEl.textContent));
+answerOneButtonEl.addEventListener("click", function(){
+checkAnswer(answerOneButtonEl.textContent);
+});
+answerTwoButtonEl.addEventListener("click", function(){
+    checkAnswer(answerTwoButtonEl.textContent);
+    });
+answerThreeButtonEl.addEventListener("click", function(){
+    checkAnswer(answerThreeButtonEl.textContent);
+    });
+answerFourButtonEl.addEventListener("click", function(){
+    checkAnswer(answerFourButtonEl.textContent);
+    });
