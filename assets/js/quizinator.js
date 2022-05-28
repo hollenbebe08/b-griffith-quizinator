@@ -7,6 +7,7 @@ var remainingTime = 0;
 var score = 0;
 var initialBtnEl = document.querySelector("#initials-btn");
 var quizTimer = undefined;
+var currentIndex = 0;
 
 //DOM Elements Q and A
 var questionEl = document.querySelector("#questions-to-ask");
@@ -15,16 +16,6 @@ var answerTwoButtonEl = document.querySelector("#answer-two");
 var answerThreeButtonEl = document.querySelector("#answer-three");
 var answerFourButtonEl = document.querySelector("#answer-four");
 
-//question variable
-// var questions = ["What is not a JavaScript Primitive Data Type?",
-//  "A JavaScript file has an extension of", 
-//  "Which of the following type of variables is visible everywhere in your JavaScript code?", 
-// ];
-
-// //answer variables
-// var answerOne = ["Array", "String", "Boolean", "Number"];
-// var answerTwo = ["html", "js", "jpg", "jsq"];
-// var answerThree = ["local variable", "script variable", "function variable", "global variable"];
 
 //object for Q and A
 var questionAnswersObj = [{
@@ -40,10 +31,10 @@ var questionAnswersObj = [{
         correctAnswer: "global variable"
     }];
 
-    var currentIndex = 0;
-
 //Main function to set the Q and A
 function startQuiz(){
+    currentIndex = 0;
+    score = 0;
     remainingTime = timerSeconds;
     document.getElementById("score-section").style.display="none";
     document.getElementById("question-section").style.display="block";
@@ -72,7 +63,7 @@ function checkAnswer(selectedAnswer){
         score += 10;
     } else {
         alert("That's wrong!");
-        timerSeconds -= 5;
+        remainingTime -= 5;
     };
 
     //Increment question or finish
