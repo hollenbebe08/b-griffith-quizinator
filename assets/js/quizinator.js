@@ -1,6 +1,7 @@
 //variables for Start Button and Timer
 var startBtnEl = document.querySelector("#start");
 var timerBtnEl = document.querySelector("#timer");
+var answerBtnsEl = document.querySelector(".answer-text");
 var timer = 40;
 
 //DOM Elements Q and A
@@ -11,15 +12,15 @@ var answerThreeButtonEl = document.querySelector("#answer-three");
 var answerFourButtonEl = document.querySelector("#answer-four");
 
 //question variable
-var questions = ["What is not a JavaScript Primitive Data Type?",
- "A JavaScript file has an extension of", 
- "Which of the following type of variables is visible everywhere in your JavaScript code?", 
-];
+// var questions = ["What is not a JavaScript Primitive Data Type?",
+//  "A JavaScript file has an extension of", 
+//  "Which of the following type of variables is visible everywhere in your JavaScript code?", 
+// ];
 
-//answer variables
-var answerOne = ["Array", "String", "Boolean", "Number"];
-var answerTwo = ["html", "js", "jpg", "jsq"];
-var answerThree = ["local variable", "script variable", "function variable", "global variable"];
+// //answer variables
+// var answerOne = ["Array", "String", "Boolean", "Number"];
+// var answerTwo = ["html", "js", "jpg", "jsq"];
+// var answerThree = ["local variable", "script variable", "function variable", "global variable"];
 
 //object for Q and A
 var questionAnswersObj = [{
@@ -43,23 +44,31 @@ function setQandA(){
     answerTwoButtonEl.textContent= questionAnswersObj[currentIndex]. answer [1];
     answerThreeButtonEl.textContent= questionAnswersObj[currentIndex].answer [2];
     answerFourButtonEl.textContent= questionAnswersObj[currentIndex].answer [3];
-    questionEl.textContent= questions[currentIndex];
-    currentIndex++;
+    questionEl.textContent= questionAnswersObj[currentIndex].question;
 
-    timerHandler();
+    // timerHandler();
 };
 
-var timerHandler = function() {
-    if (timer > 0) {
-        timer -= 1;
-        document.querySelector("#timer").innerHTML = timer;
-    } else if (timer < 0) {
-        // alert("You've ran out of time!")
-        clearInterval(startCountDown);
-    }
-
-    var startCountDown = setInterval(timerHandler, 1000);
+function checkAnswer(){
+    var answerObj = questionAnswersObj[currentIndex];
+    console.log(answerObj.correctAnswer);
 };
+
+// var timerHandler = function() {
+//     if (timer > 0) {
+//         timer -= 1;
+//         document.querySelector("#timer").innerHTML = timer;
+//     } else if (timer < 0) {
+//         // alert("You've ran out of time!")
+//         clearInterval(startCountDown);
+//     }
+
+//     var startCountDown = setInterval(timerHandler, 1000);
+// };
 
 //Event Listeners
 startBtnEl.addEventListener("click", setQandA);
+answerOneButtonEl.addEventListener("click", checkAnswer(answerOneButtonEl.textContent));
+answerTwoButtonEl.addEventListener("click", checkAnswer(answerTwoButtonEl.textContent));
+answerThreeButtonEl.addEventListener("click", checkAnswer(answerThreeButtonEl.textContent));
+answerFourButtonEl.addEventListener("click", checkAnswer(answerFourButtonEl.textContent));
