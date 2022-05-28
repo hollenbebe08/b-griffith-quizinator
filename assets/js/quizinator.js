@@ -40,6 +40,9 @@ var questionAnswersObj = [{
 //Main function to set the Q and A
 function setQandA(){
     answerOneButtonEl.textContent= questionAnswersObj[currentIndex].answer[0];
+    answerTwoButtonEl.textContent= questionAnswersObj[currentIndex]. answer [1];
+    answerThreeButtonEl.textContent= questionAnswersObj[currentIndex].answer [2];
+    answerFourButtonEl.textContent= questionAnswersObj[currentIndex].answer [3];
     questionEl.textContent= questions[currentIndex];
     currentIndex++;
 
