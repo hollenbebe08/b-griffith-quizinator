@@ -2,8 +2,11 @@
 var startBtnEl = document.querySelector("#start");
 var timerBtnEl = document.querySelector("#timer");
 var answerBtnsEl = document.querySelector(".answer-text");
-var timer = 40;
+var timerSeconds = 30;
+var remainingTime = 0;
 var score = 0;
+var initialBtnEl = document.querySelector("#initials-btn");
+var quizTimer = undefined;
 
 //DOM Elements Q and A
 var questionEl = document.querySelector("#questions-to-ask");
@@ -40,14 +43,23 @@ var questionAnswersObj = [{
     var currentIndex = 0;
 
 //Main function to set the Q and A
+function startQuiz(){
+    remainingTime = timerSeconds;
+    document.getElementById("score-section").style.display="none";
+    document.getElementById("question-section").style.display="block";
+    document.getElementById("answer-section").style.display="block";
+    document.getElementById("timer").style.display="block";
+    document.querySelector("#timer").innerHTML = remainingTime;
+    quizTimer = setInterval(timerHandler, 1000);
+    setQandA();
+};
+
 function setQandA(){
     answerOneButtonEl.textContent= questionAnswersObj[currentIndex].answer[0];
     answerTwoButtonEl.textContent= questionAnswersObj[currentIndex]. answer [1];
     answerThreeButtonEl.textContent= questionAnswersObj[currentIndex].answer [2];
     answerFourButtonEl.textContent= questionAnswersObj[currentIndex].answer [3];
     questionEl.textContent= questionAnswersObj[currentIndex].question;
-
-    // timerHandler();
 };
 
 function checkAnswer(selectedAnswer){
@@ -58,32 +70,47 @@ function checkAnswer(selectedAnswer){
         alert("That's correct!");
         score += 10;
     } else {
-        alert("That's wrong!")
+        alert("That's wrong!");
+        timerSeconds -= 5;
     };
 
     //Increment question or finish
     if(currentIndex === questionAnswersObj.length-1){
         alert("Your score is " + score);
+        finishQuiz();
     } else {
         currentIndex++;
         setQandA();
     };
 };
 
-// var timerHandler = function() {
-//     if (timer > 0) {
-//         timer -= 1;
-//         document.querySelector("#timer").innerHTML = timer;
-//     } else if (timer < 0) {
-//         // alert("You've ran out of time!")
-//         clearInterval(startCountDown);
-//     }
+function finishQuiz(){
+    clearInterval(quizTimer);
+    document.getElementById("score-section").style.display="block";
+    document.getElementById("question-section").style.display="none";
+    document.getElementById("answer-section").style.display="none";
+    document.getElementById("timer").style.display="none";
+};
 
-//     var startCountDown = setInterval(timerHandler, 1000);
-// };
+function saveScore(){
+    var initials = document.getElementById("initials-input").value;
+    localStorage.setItem(score, initials);
+    startQuiz();
+};
+
+var timerHandler = function() {
+    if (remainingTime > 0) {
+        remainingTime -= 1;
+        document.querySelector("#timer").innerHTML = remainingTime;
+    } else {
+        clearInterval(quizTimer);
+        alert("You've ran out of time!");
+        finishQuiz();
+    }
+};
 
 //Event Listeners
-startBtnEl.addEventListener("click", setQandA);
+startBtnEl.addEventListener("click", startQuiz);
 answerOneButtonEl.addEventListener("click", function(){
 checkAnswer(answerOneButtonEl.textContent);
 });
@@ -96,3 +123,4 @@ answerThreeButtonEl.addEventListener("click", function(){
 answerFourButtonEl.addEventListener("click", function(){
     checkAnswer(answerFourButtonEl.textContent);
     });
+initialBtnEl.addEventListener("click", saveScore);

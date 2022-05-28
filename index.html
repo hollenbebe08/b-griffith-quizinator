@@ -20,13 +20,13 @@
         <button id ="timer">Timer</button>
     </section>
     <main class="page-content">
-        <section class="question-answer-wrapper">
+        <section class="question-answer-wrapper" id="question-section">
             <h2 class="question-title">Test your JavaScript Knowledge!</h2>
                 <ul class="questions-list">
                     <li class="question-text" id="questions-to-ask"></li>
                 </ul>
-        <section>
-        <section>
+        </section>
+        <section id="answer-section">
             <div>
                 <div class="answer-text-styling">
                     <button type="button" value= "" class="answer-text" id="answer-one"></button>
@@ -36,6 +36,9 @@
                 </div>
             </div>
         </section>
+        <section id="score-section" style="display: none;">
+            <input type="text" id="initials-input"/>
+            <button type="button" class="initals-button" id="initials-btn"> Save Score </button>
         </section>
     </main>
     <footer>
