@@ -86,11 +86,37 @@ header h1 {
     justify-content: space-evenly;
 }
 
-.answer-text-styling li {
-    list-style: none;
+.answer-text {
+    padding: 20px;
+    background-color: var(--tertiary-color);
+    font-weight: bold;
+    font-size: 16pt;
+    border: 5px solid var(--primary-color);
+    border-radius: 1cm;
+    margin-bottom: 16px;
 }
 
-.answer-text {
+.score-section h2{
+    margin: auto;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 22pt;
+    color: var(--secondary-color);
+}
+.initials-input, .initials-button {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.initials-input {
+    padding: 20px;
+    font-size: 18pt;
+    border: 5px solid black;
+}
+
+.initials-button {
     padding: 20px;
     background-color: var(--tertiary-color);
     font-weight: bold;

@@ -23,12 +23,12 @@ var questionAnswersObj = [{
     answer: ["Array", "String", "Boolean", "Number"],
     correctAnswer: "Array",}, 
     { question: "A JavaScript file has an extension of",
-        answer: ["html", "js", "jpg", "jsq"],
-        correctAnswer: "js",
+        answer: ["HTML", "JS", "JPG", "JSQ"],
+        correctAnswer: "JS",
     },
     { question: "Which of the following type of variables is visible everywhere in your JavaScript code?",
-        answer:["local variable", "script variable", "function variable", "global variable"],
-        correctAnswer: "global variable"
+        answer:["Local Variable", "Script Variable", "Function Variable", "Global Variable"],
+        correctAnswer: "Global Variable"
     }];
 
 //Main function to set the Q and A
@@ -59,10 +59,10 @@ function checkAnswer(selectedAnswer){
 
     //check answer and increment score
     if(selectedAnswer === correctAnswer){
-        alert("That's correct!");
+        alert("That's correct! You have earned 10 points!");
         score += 10;
     } else {
-        alert("That's wrong!");
+        alert("That's wrong! You have earned 0 points!");
         remainingTime -= 5;
     };
 
