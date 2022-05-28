@@ -68,7 +68,7 @@ function checkAnswer(selectedAnswer){
 
     //Increment question or finish
     if(currentIndex === questionAnswersObj.length-1){
-        alert("Your score is " + score);
+        alert("Your final score is " + score);
         finishQuiz();
     } else {
         currentIndex++;
