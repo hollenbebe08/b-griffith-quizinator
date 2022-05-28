@@ -10,6 +10,7 @@ The JavaScript Quizinator was created to test your JavaScript knowledge by havin
 * Try again to beat your score!
 
 ## Website:
+https://hollenbebe08.github.io/b-griffith-quizinator/
 
 ## Built With
 * HTML
@@ -18,3 +19,5 @@ The JavaScript Quizinator was created to test your JavaScript knowledge by havin
 
 ## Contribution:
 Made by Betsy Griffith
+
+![screenshot of portfolio](./assets/images/screenshot-quizinator.png)
