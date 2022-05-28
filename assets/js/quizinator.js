@@ -49,6 +49,7 @@ function startQuiz(){
     document.getElementById("question-section").style.display="block";
     document.getElementById("answer-section").style.display="block";
     document.getElementById("timer").style.display="block";
+    document.getElementById("initials-input").value = "";
     document.querySelector("#timer").innerHTML = remainingTime;
     quizTimer = setInterval(timerHandler, 1000);
     setQandA();
